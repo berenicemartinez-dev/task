@@ -27,16 +27,19 @@ function addTask(){
      saveTasks();
 };
 
-taskList.addEventListener("click", function(e){
-    if(e.target.classList.contains("delete")){
-        e.target.parentElement.remove();
+taskList.addEventListener("click", function(e){ 
+    const deleteBtn = e.target.closest(".delete");
+    if(deleteBtn){
+        deleteBtn.parentElement.remove();
         showToast("Has eleiminado una tarea");
         saveTasks();
+        return;
     }
     if(e.target.classList.contains("complete")){
         const taskText = e.target.nextElementSibling;
-        if(e.target.checked){
-            taskText.classList.add("completed");
+        const isChecked = e.target.checked;
+        taskText.classList.toggle("completed", isChecked);
+        if(isChecked){
             showToast("Feleicidades has completado una tarea");
         }else{
             taskText.classList.remove("completed");
