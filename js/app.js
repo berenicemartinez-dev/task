@@ -20,7 +20,7 @@ function addTask(){
         <span>${text}</span>
      </label>
 
-     <button class = "delete">X</button>`;
+     <button class = "delete">✖️</button>`;
      taskList.appendChild(li);
      taskInput.value = "";
 
