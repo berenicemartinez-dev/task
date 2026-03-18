@@ -81,7 +81,7 @@ function loadTasks(){
             <span class="${task.completed ? "completed" : ""}">${task.text}</span>
         </label>
 
-        <button class = "delete">X</button>`;
+        <button class = "delete">✖️</button>`;
         taskList.appendChild(li);
     });
 };
